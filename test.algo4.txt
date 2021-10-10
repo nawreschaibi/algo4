@@ -1,0 +1,19 @@
+ALGORITHM sort
+VAR
+    arr: ARRAY_OF INTEGER [50];
+    curr:INTEGER;
+    n,i,j:INTEGER;
+BEGIN
+    FOR n FROM 0 TO 50 STEP 1  DO
+        read arr[n]
+    END_FOR
+    FOR i FROM 1 TO arr.length STEP 1  DO
+        curr:=arr[i];
+        j:=i-1;
+        WHILE (j>=0 AND arr[j]>curr) DO
+            arr[j+1]:=arr[j];
+            j:=j-1;
+        END_WHILE
+        arr[j+1]:=curr;
+    END_FOR
+END
